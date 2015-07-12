@@ -2,7 +2,7 @@
 <div class="sidebar">
   <div class="sidebar-about">
     <a href="{{ .Site.BaseURL }}">
-      <img src="media/me.jpg" title="{{ .Site.Author.name }}" alt="Me" />
+      <img src="img/me.png" title="{{ .Site.Author.name }}" alt="Me" width="100px" />
       <h4 class="sidebar-title">{{ .Site.Title }}</h4>
     </a>
     <span class="sidebar-tagline">{{ with .Site.Params.Description }} {{ . | safeHTML}} {{end}}</span>
@@ -17,6 +17,12 @@
       </li>
       <li class="sidebar-nav-item">
         <a class="genericon genericon-feed" href="links/index.xml"></a><a class="sidebar-link" href="links/">Links/</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="sidebar-link" href="categories/">Categories/</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="sidebar-link" href="tags/">Tags/</a>
       </li>
     </ul>
   </nav>

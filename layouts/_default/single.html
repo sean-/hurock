@@ -2,14 +2,10 @@
 
 <div id="container">
   <div id="post-header">
-    <p class="post-infos">
-      <time>{{ .Date.Format "2006-01-02 15:04" }}</time>
-      {{ .Render "tags" }}
-    </p>
     <h1>{{ .Title }}</h1>
+    <time>{{ .Date.Format "2006-01-02 15:04" }}</time>
   </div>
-
-  {{ if and (not .Site.Params.notoc) .TableOfContents }}
+  {{ if and (not (or .Site.Params.notoc .Params.notoc)) .TableOfContents }}
   <div class="toc">
     <small class="toc-label">Contents</small>
     {{ .TableOfContents }}
@@ -18,6 +14,10 @@
 
   <div class="post">
     {{ .Content }}
+  </div>
+
+  <div class="post-infos">
+    {{ .Render "tags" }}
   </div>
 
   {{ if isset .Site.Params "disqusShortname" }}

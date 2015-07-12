@@ -1,0 +1,12 @@
+{{ partial "header.html" . }}
+
+<div class="posts">
+  <h4>Categories</h4>
+  <ul class="list-unstyled">
+  {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+  <li><a href="{{ $.Site.BaseURL }}/categories/{{ $name | urlize }}">{{ $name }}</a></li>
+  {{ end }}
+</div>
+
+{{ partial "sidebar.html" . }}
+{{ partial "footer.html" . }}
